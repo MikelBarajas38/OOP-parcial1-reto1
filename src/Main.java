@@ -22,9 +22,13 @@ public class Main {
                     System.out.println(firstOperand + " - " + secondOperand + " = " + (firstOperand - secondOperand));
             case "MULTIPLICACION" ->
                     System.out.println(firstOperand + " * " + secondOperand + " = " + (firstOperand * secondOperand));
-            case "DIVISION" ->
-                    //TODO: add exception handling for secondOperand = 0
-                    System.out.println(firstOperand + " / " + secondOperand + " = " + (firstOperand / secondOperand));
+            case "DIVISION" -> {
+                    try {
+                        System.out.println(firstOperand + " / " + secondOperand + " = " + (firstOperand / secondOperand));
+                    } catch (ArithmeticException e) {
+                        System.out.println("ERROR: división entre cero");
+                    }
+            }
             default ->
                     System.out.println("Operación no soportada.");
         }
